@@ -1,0 +1,24 @@
+<div id = "home-top-div">
+		<div id = "makaan-heading-div">
+			<a href = "home.html">
+				<img id = "makaan-name" src = "../public/images/makaan-name.png" >
+			</a>
+		</div>
+		<div id = "search-bar-div">
+			<form action = "/" method="GET">
+				<div id = "search-bar-wrapper">
+					<input type="text" name="searchText" id = "search-bar" placeholder="Search for City">
+					<input type = "hidden" name = "link" class = "url-input" value = "">
+					<input type = "hidden" name = "form" value = "searchForm">
+					<input type="submit" id = "search-go-button">
+					<ul id= "searchSuggestions">
+						<% Object.keys(cities).forEach(function(city){ 
+							var x = city.charAt(0).toUpperCase() + city.slice(1);
+						%>
+						<li class = "suggestion"><%= x %></li>
+						<% }); %>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>

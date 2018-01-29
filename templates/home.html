@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="/public/home-styling-desktop.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+	<div id = "home-top-div">
+		<div id = "makaan-heading-div">
+			<a href = "home.html">
+				<img id = "makaan-name" src = "../public/images/makaan-name.png" >
+			</a>
+		</div>
+		<div id = "search-bar-div">
+			<form action = "/" method="POST">
+				<input type="text" name="search-text" id = "search-bar" placeholder="Search for City">
+				<input type="submit" id = "search-go-button">
+			</form>
+		</div>
+	</div>
+	<div id = "body-div">
+		<div id = "filters-div">
+			<form action="/" method="POST" name = "filter-form">
+				<div id = "filters-heading"><span id = "filters-heading-span">Filters</span></div>
+				<div id = "buy-rent-filter">
+					<div class = "filters-element-heading">TYPE</div>
+					<div class = "filters-element-body">
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "rent"><span class = "checkbox-text">Rent</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "buy"><span class = "checkbox-text">Buy</span>
+						</div>
+					</div>
+					<div class = "filters-element-heading">BEDROOM</div>
+					<div class = "filters-element-body">
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "1BHK"><span class = "checkbox-text">1 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "2BHK"><span class = "checkbox-text">2 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "3BHK"><span class = "checkbox-text">3 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "4BHK"><span class = "checkbox-text">4 BHK</span>
+						</div>
+					</div>
+				</div>
+
+				<div id = "filters-heading">
+					<span id = "filters-heading-span">Sort By</span><span id = "final-sort-element"></span>
+				</div>
+				<div id = "sort-buttons-div">
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="relevence" class = "sort-button" value="Relevence">
+					</div>
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="price" class = "sort-button" value="Price">
+					</div>
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="rating" class = "sort-button" value = "Rating">
+					</div>
+				</div>
+				<div id = "submit-button-div">
+					<input type="submit"  value = "GO!" id = "submit-button">
+				</div>
+			</form>
+		</div>
+
+
+		<div id = "main-body">
+			<div id = "cards-main-body">
+				<div id = "cards-body">
+					<div class = "card-div">
+						<div id = "image-wrapper">
+							<div id = "image-div">
+								<img src="/public/images/house.jpeg" id = "card-image">
+							</div>
+							<div id = "left-bottom-div">
+								<span id = "seller-name">Sheru Seller<br> 5.0*</span>
+							</div>
+						</div>
+						<div id = "card-right-div">
+							<div id = "top-card-right-div">
+								<span id = "top-card-right-span">1  BHK Apartment in Central Park The Room</span>
+								<br><span id = "top-card-right-lower-span">Sector 48, Gurgaon</span>
+							</div>
+							<div id = "middle-card-right-div">
+								<div id = "price-div">
+									<span id = "price-span">4 Cr</span><br>
+									<span id = "price2-span">10,767 /sq ft</span>
+								</div>
+								<div id = "area-div">
+									<span id = "area-span">835</span><br>
+									<span id = "area2-span">Area in sq feet</span>
+								</div>
+								<div id = "construction-status-div">
+									<span id = "status-span">Ready to go</span><br>
+									<span id = "status2-span">Construction Status</span>
+								</div>
+							</div>
+							<div id = "middle2-card-right-div">
+								<div id = "info-div">
+									<span id = "year-span">3 years old</span>
+									<span id = "bathroom-span">1 Bathroom</span>
+									<span id = "floor-span">12th out of 16 floor</span>
+								</div>
+								<br>
+								<div id = "description-div">Well designed 1 bhk multistorey apartment is available at a prime location in Central Park The Room. It is a furnished property. It has 1 wardrobe, 1 tv, 1 refrigerator and 1 sofa. It also has 1 washing machine, 1 wifi, 1 dining table, 1 gas connection, 2 ac and 1 bed. It has gymnasium as well as swimming pool. The project also has children's play area, club house, 24 x 7 security, power backup, indoor games, jogging track, intercom, multipurpose room, lift available, rain water harvesting, car parking and closed car parking. It is west facing property. The property is available on freehold. This residential property is ready-to-move-in. It is well connected to the city areas. It is made in way to provide a comfortable living for the residents. Please contact us for more details.
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "card-div">
+						<div id = "image-wrapper">
+							<div id = "image-div">
+								<img src="/public/images/house.jpeg" id = "card-image">
+							</div>
+							<div id = "left-bottom-div">
+								<span id = "seller-name">Sheru Seller<br> 5.0*</span>
+							</div>
+						</div>
+						<div id = "card-right-div">
+							<div id = "top-card-right-div">
+								<span id = "top-card-right-span">1  BHK Apartment in Central Park The Room</span>
+								<br><span id = "top-card-right-lower-span">Sector 48, Gurgaon</span>
+							</div>
+							<div id = "middle-card-right-div">
+								<div id = "price-div">
+									<span id = "price-span">4 Cr</span><br>
+									<span id = "price2-span">10,767 /sq ft</span>
+								</div>
+								<div id = "area-div">
+									<span id = "area-span">835</span><br>
+									<span id = "area2-span">Area in sq feet</span>
+								</div>
+								<div id = "construction-status-div">
+									<span id = "status-span">Ready to go</span><br>
+									<span id = "status2-span">Construction Status</span>
+								</div>
+							</div>
+							<div id = "middle2-card-right-div">
+								<div id = "info-div">
+									<span id = "year-span">3 years old</span>
+									<span id = "bathroom-span">1 Bathroom</span>
+									<span id = "floor-span">12th out of 16 floor</span>
+								</div>
+								<br>
+								<div id = "description-div">Well designed 1 bhk multistorey apartment is available at a prime location in Central Park The Room. It is a furnished property. It has 1 wardrobe, 1 tv, 1 refrigerator and 1 sofa. It also has 1 washing machine, 1 wifi, 1 dining table, 1 gas connection, 2 ac and 1 bed. It has gymnasium as well as swimming pool. The project also has children's play area, club house, 24 x 7 security, power backup, indoor games, jogging track, intercom, multipurpose room, lift available, rain water harvesting, car parking and closed car parking. It is west facing property. The property is available on freehold. This residential property is ready-to-move-in. It is well connected to the city areas. It is made in way to provide a comfortable living for the residents. Please contact us for more details.
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "card-div">
+						<div id = "image-wrapper">
+							<div id = "image-div">
+								<img src="/public/images/house.jpeg" id = "card-image">
+							</div>
+							<div id = "left-bottom-div">
+								<span id = "seller-name">Sheru Seller<br> 5.0*</span>
+							</div>
+						</div>
+						<div id = "card-right-div">
+							<div id = "top-card-right-div">
+								<span id = "top-card-right-span">1  BHK Apartment in Central Park The Room</span>
+								<br><span id = "top-card-right-lower-span">Sector 48, Gurgaon</span>
+							</div>
+							<div id = "middle-card-right-div">
+								<div id = "price-div">
+									<span id = "price-span">4 Cr</span><br>
+									<span id = "price2-span">10,767 /sq ft</span>
+								</div>
+								<div id = "area-div">
+									<span id = "area-span">835</span><br>
+									<span id = "area2-span">Area in sq feet</span>
+								</div>
+								<div id = "construction-status-div">
+									<span id = "status-span">Ready to go</span><br>
+									<span id = "status2-span">Construction Status</span>
+								</div>
+							</div>
+							<div id = "middle2-card-right-div">
+								<div id = "info-div">
+									<span id = "year-span">3 years old</span>
+									<span id = "bathroom-span">1 Bathroom</span>
+									<span id = "floor-span">12th out of 16 floor</span>
+								</div>
+								<br>
+								<div id = "description-div">Well designed 1 bhk multistorey apartment is available at a prime location in Central Park The Room. It is a furnished property. It has 1 wardrobe, 1 tv, 1 refrigerator and 1 sofa. It also has 1 washing machine, 1 wifi, 1 dining table, 1 gas connection, 2 ac and 1 bed. It has gymnasium as well as swimming pool. The project also has children's play area, club house, 24 x 7 security, power backup, indoor games, jogging track, intercom, multipurpose room, lift available, rain water harvesting, car parking and closed car parking. It is west facing property. The property is available on freehold. This residential property is ready-to-move-in. It is well connected to the city areas. It is made in way to provide a comfortable living for the residents. Please contact us for more details.
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class = "card-div">
+						<div id = "image-wrapper">
+							<div id = "image-div">
+								<img src="/public/images/house.jpeg" id = "card-image">
+							</div>
+							<div id = "left-bottom-div">
+								<span id = "seller-name">Sheru Seller<br> 5.0*</span>
+							</div>
+						</div>
+						<div id = "card-right-div">
+							<div id = "top-card-right-div">
+								<span id = "top-card-right-span">1  BHK Apartment in Central Park The Room</span>
+								<br><span id = "top-card-right-lower-span">Sector 48, Gurgaon</span>
+							</div>
+							<div id = "middle-card-right-div">
+								<div id = "price-div">
+									<span id = "price-span">4 Cr</span><br>
+									<span id = "price2-span">10,767 /sq ft</span>
+								</div>
+								<div id = "area-div">
+									<span id = "area-span">835</span><br>
+									<span id = "area2-span">Area in sq feet</span>
+								</div>
+								<div id = "construction-status-div">
+									<span id = "status-span">Ready to go</span><br>
+									<span id = "status2-span">Construction Status</span>
+								</div>
+							</div>
+							<div id = "middle2-card-right-div">
+								<div id = "info-div">
+									<span id = "year-span">3 years old</span>
+									<span id = "bathroom-span">1 Bathroom</span>
+									<span id = "floor-span">12th out of 16 floor</span>
+								</div>
+								<br>
+								<div id = "description-div">Well designed 1 bhk multistorey apartment is available at a prime location in Central Park The Room. It is a furnished property. It has 1 wardrobe, 1 tv, 1 refrigerator and 1 sofa. It also has 1 washing machine, 1 wifi, 1 dining table, 1 gas connection, 2 ac and 1 bed. It has gymnasium as well as swimming pool. The project also has children's play area, club house, 24 x 7 security, power backup, indoor games, jogging track, intercom, multipurpose room, lift available, rain water harvesting, car parking and closed car parking. It is west facing property. The property is available on freehold. This residential property is ready-to-move-in. It is well connected to the city areas. It is made in way to provide a comfortable living for the residents. Please contact us for more details.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src = "/public/js/animations.js"></script>
+</body>
+</html>

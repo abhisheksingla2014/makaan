@@ -1,0 +1,557 @@
+@media screen and (min-width: 1000px){	
+	*{
+		box-sizing: border-box;
+		margin: 0px;
+		font-size: 0;
+	}
+	#home-top-div{
+		height: 70px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding:8px;
+		box-shadow: 0px 0px 10px 0px;
+		z-index: 5;
+		background-color: rgb(240,240,240);
+	}
+	#makaan-heading-div{
+		height: 100%;
+		width: 300px;
+		/*background-color: green;*/
+		display: inline-block;
+		padding: 10px;
+		padding-left : 160px;
+		padding-top: 15px;
+		vertical-align: top;
+		padding-bottom: 12px;
+		/*border-radius: 10px;*/
+	}
+	#makaan-name{
+		height: 100%;
+		width: 100%;
+		border-radius: 5px;
+		/*box-shadow: 0px 1px 0px 1px;*/
+	}
+	#search-bar-div{
+		display: inline-block;
+		height: 100%;
+		width: calc(100% - 300px);
+		padding:10px;
+		padding-left: 30px;
+	}
+	#search-bar-wrapper{
+		position: relative;
+	}
+	#searchSuggestions{
+		position: absolute;
+		top:95%;
+		left: 0;
+		width: 450px;
+		list-style-type: none;
+		z-index: 5;
+		-webkit-padding-start: 0;
+		/*list-style-position: inside; */
+		/*margin-left: -20px;*/
+		background-color: white;
+	}
+	.suggestion{
+		height: 40px;
+		width: 100%;
+		font-size: 17px;
+		padding: 5px;
+		padding-left: 10px;
+		border:1px solid #efefef;
+		border-left: 0px;
+		border-right: 0px;
+		/*margin-left: -20px;*/
+		/*padding-left: 20px;*/
+		display: none;
+		cursor: pointer;
+		color: black; 
+	}
+	#search-bar{
+		width: 450px;
+		height: 37px;
+		background: rgba(150,150,150,0.6);
+	    border: none;
+	    font-size: 16px;
+	    color: #909090;
+	    border-right: none;
+	    outline: none;
+	    text-overflow: ellipsis;
+	    border-radius: 2px 0px 0px 2px;
+	    font-family: "font-regular";
+	    padding :0 10px 0 32px;
+	    display: inline-block;
+	}
+	#search-go-button{
+		display: inline-block;
+		position: relative;
+	    /*top: 10;*/
+	    background: #333;
+	    color: #fff;
+	    transition: all 0.2s ease-out;
+	    height: 37px;
+	    border: none;
+	    cursor: pointer;
+	    text-align: center;
+	    line-height: 25px;
+	    font-size: 14px;
+	    border-radius: 0 3px 3px 0 !important;
+	    /*padding: 5px;*/
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	#body-div{
+		/*position: relative;*/
+		/*padding-top: 70px;*/
+		/*background-color: pink;*/
+		width: 100%;
+		/*height: 1000px;*/
+		margin-top: 70px;
+		background-color: #EeEeEe;
+		/*background-image: url(/public/images/logo.png);*/
+		/*background-size: cover;*/
+	}
+	#filters-div{
+		position: relative;
+	    font-family: "font-regular";
+	    padding: 10px;
+	    margin-right: 2px;
+	    overflow: hidden;
+	    /*height: 800px;*/
+	    width: 22%;
+		display: inline-block;
+		border-radius: 0px 5px 5px 0px ;
+		padding-bottom: 30px; 
+		margin-top: 30px;
+		background: #424242;
+	}
+	#filters-heading{
+		position: relative;
+	    height: 45px;
+	    width: 100%;
+	    padding: 5px;
+	    border-bottom: 1px solid #f0f0f0;
+	    padding-bottom: 12px;
+		font-family: Roboto, Arial, sans-serif;
+	    letter-spacing: 0;
+		font-size: 14px;
+	    color: #212121;
+	    line-height: 1.4;
+	    display: block;
+	    color: white;
+	    /*padding-top: 300px;*/
+	    /*background-color: white;*/
+	}
+	#filters-heading-span{
+		font-family: Roboto,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,sans-serif;
+		font-size: 22px;
+		color: white;
+		/*font-weight: 600;*/
+	}
+	#buy-rent-filter{
+		/*height: 200px;*/
+		width: 100%;
+		display: block;
+		/*background-color: yellow;*/
+	}
+	.filters-element-heading{
+		height: 40px;
+		width: 100%;
+		padding: 5px;
+		padding-top: 10px;
+		font-family: Roboto,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		padding-bottom: 10px;
+		color: white;
+		/*background-color: red;*/
+	}
+	.filters-element-body{
+		width: 100%;
+		padding-top: 15px;
+	    border-top: 1px solid #e5e5e5;
+	    padding:5px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    font-size: 10px;
+	    color: white;
+	}
+	.filters-checkbox-div{
+		padding: 5px;
+		padding: 6px 10px;
+	    margin: -6px -10px 6px;
+	    position: relative;
+	 /*   cursor: pointer;*/
+	    border: 0;
+	    font-size: 12px;
+	    font: inherit;
+	    vertical-align: baseline;
+	    display: block;
+	    height: 40px;
+	    /*background-color: pink;*/
+	}
+	.checkbox-text{
+		/*position: relative;*/
+		font-size: 17px;
+		padding-left: 25px;
+		vertical-align: center;
+	}
+	.checkbox-box{
+		position: absolute;
+		top: 6px;
+		left: 8px;
+		border: 0;
+		height: 20px;
+		width: 20px;
+		border-radius: 2px;
+		cursor: pointer;
+		font-family: Verdana,sans-serif;
+		background-color: transparent;
+	}
+	#sort-buttons-div{
+		width: 100%;
+		padding:5px;
+		display: flex;
+		justify-content: left;
+		/*height: 100px;*/
+		/*background-color: orange;*/
+	}
+	.sort-buttons-div-class{
+		width: 100px;
+		padding:3px;
+		height: 40px;
+		margin-bottom: 5px;
+		display: block;
+		/*padding-right: 80px; */
+		/*background-color: pink;*/
+	}
+	.sort-button{
+		width: 100%;
+		height: 100%;
+		padding:3px;
+		border :0;
+		color: white;
+	    /*padding: 15px 32px;*/
+	    text-align: center;
+	    text-decoration: none;
+	    font-size: 16px;
+	    font-family: 'Russo One', sans-serif;
+	    /*margin: 4px 2px;*/
+	    cursor: pointer;
+	    border-radius: 5px;
+		outline: 0;
+		color: black;
+		background-color: rgb(255,255,255);
+	}
+	#submit-button-div{
+		width: 100%;
+		display: flex;
+		margin-top: 30px;
+		justify-content: center;
+	}
+	#submit-button{
+		width: 120px;
+		height: 40px;
+		padding:3px;
+		border :0;
+		color: white;
+	    /*padding: 15px 32px;*/
+	    text-align: center;
+	    text-decoration: none;
+	    font-size: 16px;
+	    font-family: 'Russo One', sans-serif;
+	    /*margin: 4px 2px;*/
+	    cursor: pointer;
+	    border-radius: 5px;
+		outline: 0;
+		color: black;
+		background-color: rgb(255,255,255);
+	}
+	#main-body{
+		width: 77%;
+		/*height:800px;*/
+		display: inline-block;
+		vertical-align: top;
+		/*background-color: pink;*/
+	}
+	#cards-main-body{
+		height: inherit;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+	}
+	#cards-body{
+		width: 700px;
+		height: inherit;
+		display: inline-block;
+		margin-left: 20px;
+		/*background-color: yellow;*/
+	}
+	.card-div{
+		height: 260px;
+		position: relative;
+	    display: block;
+	    width: inherit;
+	    /*padding: 15px;*/
+	    /*margin: 20px 65px 40px;*/
+	    text-transform: none;
+	    -webkit-transition: all .3s ease-in;
+	    transition: all .3s ease-in;
+	    margin-top: 20px;
+	    border-radius: 5px;
+	    background-color: white;
+	    box-shadow: 0px;
+	    cursor: pointer;
+	}
+	#image-wrapper{
+		width: 250px;
+		height: inherit;
+		display: inline-block;
+		border-radius: 10px 0 0 0;
+		/*background-color: orange;*/
+	}
+	#image-div{
+		width: inherit;
+		height: 208px;
+		vertical-align: top;
+		display: block;
+		border-radius: 10px 0px 0px 0px;
+		/*background-color: pink;*/
+	}
+	#left-bottom-div{
+		/*position: relative;*/
+		height: 52px;
+		width: inherit;
+		display: block;
+		padding:5px;
+		text-align: center;
+		/*background-color: blue;*/
+	}
+	#seller-image-div{
+		display: inline-block;
+		height: 100%;
+		width: 20%;
+		/*padding: 10px;*/
+		vertical-align: top;
+		/*background-color: blue; */
+	}
+	#seller-image{
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	#seller-info{
+		display: inline-block;
+		height: 100%;
+		width: 80%;
+		font-size: 15px;
+		vertical-align: top;
+		padding-top: 10px;
+	}
+	#card-image{
+		height: inherit;
+		width: inherit;
+		object-fit: cover;
+	}
+	#seller-name{
+		font-size: 15px;
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+	#card-right-div{
+		display: inline-block;
+		width: 450px;
+		padding: 5px;
+		height: 100%;
+		vertical-align: top;
+		padding-left: 15px;
+		overflow: hidden;
+		/*background-color: green;*/
+	}
+	#top-card-right-div{
+		display: block;
+		width: 100%;
+		height: 25%;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 16px;
+		border-bottom:  1px solid #f0f0f0;
+		white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis; 
+		/*background-color: blue;	*/
+	}
+	#top-card-right-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 550;
+	}
+	#top-card-right-lower-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	#middle-card-right-div{
+		display: block;
+		width: 100%;
+		height: 25%;
+		padding: 5px;
+		/*background-color: green;*/
+	}
+	#middle2-card-right-div{
+		display: block;
+		width: 100%;
+		height: 50%;
+		/*background-color: orange;	*/
+	}
+	#price-div{
+		display: inline-block;
+		width: 32%;
+		height: 100%;
+		vertical-align: top;
+		padding: 5px;
+	}
+	#area-div{
+		display: inline-block;
+		width: 32%;
+		height: 100%;
+		vertical-align: top;
+		padding: 5px;
+	}
+	#construction-status-div{
+		display: inline-block;
+		/* width: 32%; */
+		height: 100%;
+		vertical-align: top;
+		padding: 5px;
+		/*background-color: white;*/
+	}
+	#price-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	#price2-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 12px;
+		line-height: 1.5;
+		color: grey;
+	}
+	#area-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	#area2-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 12px;
+		line-height: 1.5;
+		color: grey;
+	}
+	#area-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	#area2-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 12px;
+		line-height: 1.5;
+		color: grey;
+	}
+	#status-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	#status2-span{
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 12px;
+		line-height: 1.5;
+		color: grey;
+	}
+	#info-div{
+		padding: 5px;
+		display: block;
+	}
+	#year-span{
+		font-size: 15px;
+		border-right: 1px solid #a0a0a0;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	#bathroom-span{
+		font-size: 15px;
+		border-right: 1px solid #a0a0a0;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	#floor-span{
+		font-size: 15px;
+		/*border-right: 1px solid #a0a0a0;*/
+		padding-right: 4px;
+		padding-left: 5px;
+	}
+	.description-div{
+		font-size: 16px;
+		text-overflow: ellipsis;
+		height: 100px;
+		padding: 5px;
+		/*white-space:nowrap;*/
+		overflow:hidden;
+	}
+	#body-right-div{
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		width: 35%;
+		height: 400px;
+		background-color: orange;
+	}
+	.description-box{
+		position: absolute;
+		top:0px;
+		left:102%;
+		width: 380px;
+		/*height: 100px;*/
+		font-size: 17px;
+		padding: 5px;
+		border-radius: 5px;
+		background-color: white;
+		display: none;
+	}
+	#bottom-div{
+		height: 80px;
+		display: flex;
+		justify-content: center;
+		padding-top: 20px;
+		/*background-color: ;*/
+	}
+	#page-button{
+		height: 40px;
+		width: 40px;
+		color:white;
+		border-radius: 5px;
+		display: inline;
+		border:0;
+		outline: 0;
+		font-size: 20px;
+		font-weight: 700;
+		background-color: black;
+	}
+	#page-button2{
+		margin-left: 10px;
+		height: 40px;
+		width: 40px;
+		color:white;
+		border-radius: 5px;
+		display: inline;
+		border:0;
+		outline: 0;
+		font-size: 20px;
+		font-weight: 700;
+		background-color: black;
+	}
+}

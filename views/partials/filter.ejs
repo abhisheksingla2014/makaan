@@ -1,0 +1,52 @@
+<div id = "filters-div">
+			<form action="/" method="GET" name = "filter-form">
+				<div id = "filters-heading"><span id = "filters-heading-span">Filters</span></div>
+				<div id = "buy-rent-filter">
+					<div class = "filters-element-heading">TYPE</div>
+					<div class = "filters-element-body">
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "rent"><span class = "checkbox-text">Rent</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "buy"><span class = "checkbox-text">Buy</span>
+						</div>
+					</div>
+					<div class = "filters-element-heading">BEDROOM</div>
+					<div class = "filters-element-body">
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "1BHK"><span class = "checkbox-text">1 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "2BHK"><span class = "checkbox-text">2 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "3BHK"><span class = "checkbox-text">3 BHK</span>
+						</div>
+						<div class = "filters-checkbox-div">
+							<input type = "checkbox" class = "checkbox-box" name = "4BHK"><span class = "checkbox-text">4 BHK</span>
+						</div>
+					</div>
+				</div>
+
+				<div id = "filters-heading">
+					<span id = "filters-heading-span">Sort By</span><span id = "final-sort-element"></span>
+				</div>
+				<div id = "sort-buttons-div">
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="relevanceScore" class = "sort-button" value="Relevance">
+					</div>
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="price" class = "sort-button" value="Price">
+					</div>
+					<div class = "sort-buttons-div-class">
+						<input type= "button" name ="listingSellerCompanyScorerating" class = "sort-button" value = "Rating">
+					</div>
+				</div>
+				<div id = "submit-button-div">
+					<input type = "hidden" name = "form" value = "filterForm">
+					<input type = "hidden" name = "link" class = "url-input" value = "filterForm">
+					<input type = "hidden" name = "sortBy" id = "sortParameter" value = "">
+					<input type="submit"  value = "GO!" id = "submit-button">
+				</div>
+			</form>
+		</div>
