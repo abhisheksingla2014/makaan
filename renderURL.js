@@ -37,7 +37,7 @@ function renderURL(link,res){
 	  				let cityLabel = api_output.data[i].facetedResponse.items[j].listing.property.project.locality.suburb.city.label;
 	  					
 	  				let obj = {};
-					obj.name = api_output.data[i].facetedResponse.items[j].listing.companySeller.user.fullName;
+					obj.name = api_output.data[i].facetedResponse.items[j].listing.companySeller.company.name;
 	  				obj.url = api_output.data[i].facetedResponse.items[j].listing.companySeller.user.profilePictureURL;
 	  				obj.bedrooms = api_output.data[i].facetedResponse.items[j].listing.property.bedrooms;
 	  				obj.address = api_output.data[i].facetedResponse.items[j].listing.property.project.locality.label;
