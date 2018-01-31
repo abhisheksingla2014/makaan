@@ -2,10 +2,11 @@
 	*{
 		box-sizing: border-box;
 		margin: 0px;
+		text-decoration: none;	
 		font-size: 0;
 	}
 	#home-top-div{
-		height: 70px;
+		height: 110px;
 		width: 100%;
 		position: fixed;
 		top: 0;
@@ -17,7 +18,7 @@
 		background-color: rgb(240,240,240);
 	}
 	#makaan-heading-div{
-		height: 100%;
+		height: 60px;
 		width: 300px;
 		/*background-color: green;*/
 		display: inline-block;
@@ -36,7 +37,7 @@
 	}
 	#search-bar-div{
 		display: inline-block;
-		height: 100%;
+		height: 60px;
 		width: calc(100% - 300px);
 		/*background-color: orange;*/
 		padding:10px;
@@ -105,16 +106,55 @@
 	    padding-left: 20px;
 	    padding-right: 20px;
 	}
+	#display-div{
+		height: 40px;
+		display: block;
+		background-color: white;
+		width: 100%;
+		/*padding: 5px;*/
+		/*padding-left: 20px;*/
+		/*padding-right: 20px;*/
+	}
+	#reset-button{
+		height: 100%;
+		width: 80px;
+		display: inline-block;
+		font-size: 15px;
+		border:0;
+		background-color: orange;
+		color:white;
+		font-weight:600;
+		cursor: pointer;
+	}
+	#reset-button:hover{
+		background-color: rgb(200,200,200);
+	}
+	.tag-button{
+		height: 100%;
+		width:100px;
+		/*text-align: center;*/
+		color:white;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 15px;
+		margin-left:20px;
+		border:0;
+		background-color:rgb(180,180,180);
+	}
 	#body-div{
 		/*position: relative;*/
 		/*padding-top: 70px;*/
 		/*background-color: pink;*/
 		width: 100%;
 		/*height: 1000px;*/
-		margin-top: 70px;
+		margin-top: 110px;
 		background-color: #EeEeEe;
 		/*background-image: url(/public/images/logo.png);*/
 		/*background-size: cover;*/
+	}
+	#properties_count{
+		font-size: 18px;
+		color: white;
 	}
 	#filters-div{
 		position: relative;
@@ -348,10 +388,27 @@
 	#seller-info{
 		display: inline-block;
 		height: 100%;
-		width: 80%;
+		width: 60%;
 		font-size: 15px;
 		vertical-align: top;
-		padding-top: 10px;
+		padding-top: 5px;
+	}
+	#seller-rating{
+		display: inline-block;
+		height: 100%;
+		width: 20%;
+		font-size: 15px;
+		vertical-align: top;
+		padding-top: 0px;
+		border-left: 1px solid #f0f0f0;
+		background-color: rgb(232, 28, 40);
+		line-height: 1;
+	}
+	.seller-rating-span{
+		font-size:13px;
+		vertical-align: top;
+		color:white;
+
 	}
 	#card-image{
 		height: inherit;
@@ -405,8 +462,68 @@
 	#middle2-card-right-div{
 		display: block;
 		width: 100%;
-		height: 50%;
+		height: 25%;
 		/*background-color: orange;	*/
+	}
+	#bottom-card-right-div{
+		display: block;
+		width: 100%;
+		height: 25%;
+		/*background-color: orange;	*/
+	}
+	.contact-now-button{
+		background-color: rgb(232, 28, 40) ;
+		border-bottom-color: rgb(232, 28, 40) ;
+		border-bottom-left-radius: 20px ;
+		border-bottom-right-radius: 20px ;
+		border-bottom-style: solid ;
+		border-bottom-width: 0.989583px ;
+		border-image-outset: 0px ;
+		border-image-repeat: stretch ;
+		border-image-slice: 100% ;
+		border-image-source: none ;
+		border-image-width: 1 ;
+		border-left-color: rgb(232, 28, 40) ;
+		border-left-style: solid ;
+		border-left-width: 0.989583px ;
+		border-right-color: rgb(232, 28, 40) ;
+		border-right-style: solid ;
+		border-right-width: 0.989583px ;
+		border-top-color: rgb(232, 28, 40) ;
+		border-top-left-radius: 20px ;
+		border-top-right-radius: 20px ;
+		border-top-style: solid ;
+		border-top-width: 0.989583px ;
+		box-sizing: border-box ;
+		color: rgb(255, 255, 255) ;
+		cursor: pointer ;
+		display: inline-block ;
+		font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif ;
+		font-size: 14px ;
+		font-weight: 400 ;
+		height: 35.9896px ;
+		line-height: 34px ;
+		padding-bottom: 0px ;
+		padding-left: 20px ;
+		padding-right: 20px ;
+		padding-top: 0px ;
+		text-align: center ;
+		text-decoration-color: rgb(255, 255, 255) ;
+		text-decoration-line: none ;
+		text-decoration-style: solid ;
+		float: right;
+		margin-top: 10px;
+		margin-right: 20px;
+	}
+	.contact-now-span{
+		font-size: 15px;
+		color:white;
+		display: block;
+	}
+	.seller-contact-number{
+		font-size: 15px;
+		color:white;
+		display: none;
 	}
 	#price-div{
 		display: inline-block;
@@ -499,9 +616,9 @@
 	.description-div{
 		font-size: 16px;
 		text-overflow: ellipsis;
-		height: 100px;
+		/*height: 50px;*/
 		padding: 5px;
-		/*white-space:nowrap;*/
+		white-space:nowrap;
 		overflow:hidden;
 	}
 	#body-right-div{
@@ -530,30 +647,36 @@
 		justify-content: center;
 		padding-top: 20px;
 		/*background-color: ;*/
-	}
-	#page-button{
-		height: 40px;
-		width: 40px;
-		color:white;
-		border-radius: 5px;
-		display: inline;
 		border:0;
-		outline: 0;
-		font-size: 20px;
-		font-weight: 700;
-		background-color: black;
 	}
-	#page-button2{
-		margin-left: 10px;
-		height: 40px;
-		width: 40px;
-		color:white;
-		border-radius: 5px;
-		display: inline;
+	#multi-button-wrapper{
+		width: 152px;
+		height: 30px;
+		background-color: white;
+		border:1px solid #a0a0a0;
+	}
+	.page-buttons{
+		height: 100%;
+		width: 30px;
+		font-size: 15px;
+		background-color: white;
 		border:0;
-		outline: 0;
-		font-size: 20px;
-		font-weight: 700;
-		background-color: black;
+		cursor: pointer;
+	}
+	#prev-button{
+		height: 30px;
+		width: 30px;
+		background-color: white;
+		/*border:1px solid #a0a0a0;*/
+		font-size: 15px;
+		font-weight:600;
+	}
+	#next-button{
+		height: 30px;
+		width: 30px;
+		background-color: white;
+		/*border:1px solid #a0a0a0;*/
+		font-size: 15px;
+		font-weight:600;
 	}
 }

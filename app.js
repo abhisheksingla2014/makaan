@@ -22,35 +22,40 @@ function addfilters(type,cities,bhk,link){
 	outputURL += '{"equal":{"listingCategory":[';
 	outputURL += type + ']}},';
 	outputURL += '{"equal":{"cityId":[';
-	if(cities.length == 0){
+	if(cities == ""){
 		for(var c in city){
 			outputURL += city[c].toString() + ',';
 		}
 		outputURL = outputURL.slice(0,-1);	
 	}
 	else{
-		cl("cities ki length " + cities.length);
-		outputURL += cities;
+		outputURL += city[cities.toLowerCase()];
+		
 	}
 	outputURL += ']}}';
 	if(bhk.length != 0){
-		outputURL += ',{"equal":{"bedrooms":[';
+		outputURL += ',{"equal":{"bedrooms":';
 		outputURL += bhk;
-		outputURL += ']}}';
+		outputURL += '}}';
 	}
 	outputURL += ']}';
 	return outputURL;
 }
 function addSort(sortBy){
 	let outputURL = ',"sort":[{"field":"' + sortBy + '","sortOrder":"DESC"}]';
-	return outputURL;
+	if(sortBy == "")
+		return "";
+	else return outputURL;
 }
-function generate_url(type,cities,bhk,link,sortBy){
+function addPage(pageNo){
+	return ',"paging":{"start":' + (parseInt(pageNo)-1)*10 +',"rows":10}}&includeNearbyResults=false&includeSponsoredResults=false&sourceDomain=Makaan';
+}
+function generate_url(type,cities,bhk,link,sortBy,pageNo){
 	link = link + "?selector={";
 	link += addfilters(type,cities,bhk,link);
 	if(sortBy)
 		link += addSort(sortBy);
-	link = link +',"paging":{"start":0,"rows":30}}&includeNearbyResults=false&includeSponsoredResults=false&sourceDomain=Makaan';
+	link = link + addPage(pageNo);
 	cl(link);
 	return link;
 }
@@ -85,80 +90,117 @@ app.get('/',function(req,res){
     var site = "http://www.makaan.com/petra/app/v4/listing";
 	var url_parts = url.parse(req.url, true);
 	var query1 = url_parts.query;
-	try{
-		var link_parts = url.parse(query1.link, true);
-		var query2 = link_parts.query;
-		cl("query2");
-		cl(query2);
-	}
-	catch(err){
-		cl("Error No Query2");
-	}
+	// try{
+	// 	var link_parts = url.parse(query1.link, true);
+	// 	var query2 = link_parts.query;
+	// 	cl("query2");
+	// 	cl(query2);
+	// }
+	// catch(err){
+	// 	cl("Error No Query2");
+	// }
 	cl("query1");
 	cl(query1);
-	if(!Object.keys(query1).length){
-		cl("No 1");
-		let link = generate_url(['"Resale"','"Primary"','"Rental"'],[],[],site);
-		rURL.renderURL(link,res);
-	}
-	else if(!Object.keys(query2).length){
-		cl("No 2");
-		if(query1.form == 'searchForm'){
-			cl("search-form");
-			let link = generate_url(['"Resale"','"Primary"','"Rental"'],[city[query1.searchText.toLowerCase()]],[],site);
-			rURL.renderURL(link,res);
+	var category_lst = [];
+	var bhk = [];
+	var searchText = "";
+	var pageNo = 1;
+	var sortby = "";
+	if(query1.category_lst){
+		category_lst = query1.category_lst;
+		if(category_lst.length == 2){
+			category_lst = ['"Resale"','"Primary"','"Rental"'];
 		}
 		else{
-			cl("filter-form");
-			var obj = generateQuery(query1);
-			let link;
-			if(query1['sortBy']){
-				link = generate_url(obj.type_lst,[],obj.category_lst,site,query1['sortBy']);
+			if(category_lst[0] == "rent"){
+				category_lst = ['"Rental"'];
 			}
-			else link = generate_url(obj.type_lst,[],obj.category_lst,site);
-			// cl(link);
-			rURL.renderURL(link,res);	
+			else category_lst = ['"Resale"','"Primary"']; 
 		}
 	}
-	else {
-		cl("Both");
-		if(query1.form == 'searchForm'){
-			if(query2.form == 'searchForm'){
-				let link = generate_url(['"Resale"','"Primary"','"Rental"'],[city[query1.searchText.toLowerCase()]],[],site);
-				rURL.renderURL(link,res);
-			}
-			else{
-				var obj = generateQuery(query2);
-				let link;
-				if(query2['sortBy']){
-					link = generate_url(obj.type_lst,[city[query1.searchText.toLowerCase()]],obj.category_lst,site,query2['sortBy']);
-				}
-				else link = generate_url(obj.type_lst,[city[query1.searchText.toLowerCase()]],obj.category_lst,site);
-				rURL.renderURL(link,res);	
-			}
-		}
-		else{
-			if(query2.form == 'filterForm'){
-				var obj = generateQuery(query1);
-				let link;
-				if(query1['sortBy']){
-					link = generate_url(obj.type_lst,[],obj.category_lst,site,query1['sortBy']);
-				}
-				else link = generate_url(obj.type_lst,[],obj.category_lst,site);
-				rURL.renderURL(link,res);
-			}
-			else{
-				var obj = generateQuery(query1);
-				let link;
-				if(query1['sortBy']){
-					link = generate_url(obj.type_lst,[city[query2.searchText.toLowerCase()]],obj.category_lst,site,query1['sortBy']);
-				}
-				else link = generate_url(obj.type_lst,[city[query2.searchText.toLowerCase()]],obj.category_lst,site);
-				rURL.renderURL(link,res);	
-			}
-		}
+	else category_lst = ['"Resale"','"Primary"','"Rental"'];
+	if(query1.bhk){
+		bhk = query1.bhk;
+	}
+	if(query1.pageNo){
+		pageNo = query1.pageNo;
+	}
+	if(query1.sortby){
+		sortby = query1.sortby;
+		if(sortby == "relevanceScore") sortby = "";
+	}
+	if(query1.searchText){
+		searchText = query1.searchText;
+	}
+	// console.log(category_lst,bhk,pageNo,sortby,searchText);
+	let link = generate_url(category_lst,searchText,bhk,site,sortby,pageNo);
+	rURL.renderURL(link,res);
+	cl(link);
+	// res.end();
+	// if(!Object.keys(query1).length){
+	// 	cl("No 1");
+		// let link = generate_url(['"Resale"','"Primary"','"Rental"'],[],[],site);
+		// rURL.renderURL(link,res);
 
-	}	
+	// }
+	// else if(!Object.keys(query2).length){
+	// 	cl("No 2");
+	// 	if(query1.form == 'searchForm'){
+	// 		cl("search-form");
+	// 		let link = generate_url(['"Resale"','"Primary"','"Rental"'],[city[query1.searchText.toLowerCase()]],[],site);
+	// 		rURL.renderURL(link,res);
+	// 	}
+	// 	else{
+	// 		cl("filter-form");
+	// 		var obj = generateQuery(query1);
+	// 		let link;
+	// 		if(query1['sortBy']){
+	// 			link = generate_url(obj.type_lst,[],obj.category_lst,site,query1['sortBy']);
+	// 		}
+	// 		else link = generate_url(obj.type_lst,[],obj.category_lst,site);
+	// 		// cl(link);
+	// 		rURL.renderURL(link,res);	
+	// 	}
+	// }
+	// else {
+	// 	cl("Both");
+	// 	if(query1.form == 'searchForm'){
+	// 		if(query2.form == 'searchForm'){
+	// 			let link = generate_url(['"Resale"','"Primary"','"Rental"'],[city[query1.searchText.toLowerCase()]],[],site);
+	// 			rURL.renderURL(link,res);
+	// 		}
+	// 		else{
+	// 			var obj = generateQuery(query2);
+	// 			let link;
+	// 			if(query2['sortBy']){
+	// 				link = generate_url(obj.type_lst,[city[query1.searchText.toLowerCase()]],obj.category_lst,site,query2['sortBy']);
+	// 			}
+	// 			else link = generate_url(obj.type_lst,[city[query1.searchText.toLowerCase()]],obj.category_lst,site);
+	// 			rURL.renderURL(link,res);	
+	// 		}
+	// 	}
+	// 	else{
+	// 		if(query2.form == 'filterForm'){
+	// 			var obj = generateQuery(query1);
+	// 			let link;
+	// 			if(query1['sortBy']){
+	// 				link = generate_url(obj.type_lst,[],obj.category_lst,site,query1['sortBy']);
+	// 			}
+	// 			else link = generate_url(obj.type_lst,[],obj.category_lst,site);
+	// 			rURL.renderURL(link,res);
+	// 		}
+	// 		else{
+	// 			var obj = generateQuery(query1);
+	// 			let link;
+	// 			if(query1['sortBy']){
+	// 				link = generate_url(obj.type_lst,[city[query2.searchText.toLowerCase()]],obj.category_lst,site,query1['sortBy']);
+	// 			}
+	// 			else link = generate_url(obj.type_lst,[city[query2.searchText.toLowerCase()]],obj.category_lst,site);
+	// 			rURL.renderURL(link,res);	
+	// 		}
+	// 	}
+
+	// }	
 });
 app.listen(8080,function(){
 	cl("listening at port number 8080");

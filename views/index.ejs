@@ -11,33 +11,39 @@
 </head>
 <body>
 	<% include partials/header.ejs %>
+	
 	<div id = "body-div">
 		<% include partials/filter.ejs %>
 		<div id = "main-body">
 			<div id = "cards-main-body">
 				<div id = "cards-body">
 					<% arr.forEach(function(item){ %>
-					<a style = "color:black;" href= <%= item.resaleURL %> >
 					<div class = "card-div">
-						<div id = "image-wrapper">
-							<div id = "image-div">
-								<img src = <%= item.mainImageURL %> id = "card-image">
-							</div>
-							<div id = "left-bottom-div">
-								<div id = "seller-image-div">
-									<img src = <%= item.url %> id = "seller-image">  
+						<a style = "color:black;" href= <%= item.resaleURL %> >
+							<div id = "image-wrapper">
+								<div id = "image-div">
+									<img src = <%= item.mainImageURL %> id = "card-image">
 								</div>
-								<div id = "seller-info" >
-									<span id = "seller-name"><%= item.name %></span>
+								<div id = "left-bottom-div">
+									<div id = "seller-image-div">
+										<img src = <%= item.url %> id = "seller-image">  
+									</div>
+									<div id = "seller-info" >
+										<span id = "seller-name"><%= item.name %></span>
+									</div>
+									<div id = "seller-rating" >
+										<span class = "seller-rating-span"><%= item.rating %></span><br>
+										<span class = "seller-rating-span">Count:<br><%= item.NoRatings %></span>
+									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 						<div id = "card-right-div">
-							<div id = "top-card-right-div">
-								<span id = "top-card-right-span"><%= item.title %></span>
+							<a style = "color:black;" href= <%= item.resaleURL %> ><div id = "top-card-right-div">
+								<span id = "top-card-right-span"><%= item.bedrooms %>BHK Apartment</span>
 								<br><span id = "top-card-right-lower-span"><%= item.address %>, <%= item.city %></span>
-							</div>
-							<div id = "middle-card-right-div">
+							</div></a>
+							<a style = "color:black;" href= <%= item.resaleURL %> ><div id = "middle-card-right-div">
 								<div id = "price-div">
 									<span id = "price-span"><%= priceCorrector(item.price) %></span><br>
 									<span id = "price2-span"><%= (item.price/item.size).toFixed(0) %> / sq ft</span>
@@ -50,8 +56,8 @@
 									<span id = "status-span"><%= item.status %></span><br>
 									<span id = "status2-span">Construction Status</span>
 								</div>
-							</div>
-							<div id = "middle2-card-right-div">
+							</div></a>
+							<a style = "color:black;" href= <%= item.resaleURL %> ><div id = "middle2-card-right-div">
 								<div id = "info-div">
 									<span id = "year-span">3 years old</span>
 									<span id = "bathroom-span"><%= item.bedrooms %></span>
@@ -60,6 +66,9 @@
 								<br>
 								<div class = "description-div"><%= item.description %>
 								</div>
+							</div></a>
+							<div id = "bottom-card-right-div">
+								<button class = "contact-now-button"><span class = "contact-now-span">Contact Now</span><span class = "seller-contact-number"><%= item.contactNumber %></span></span></button>
 							</div>
 						</div>
 						<div class = "description-box">
@@ -68,7 +77,6 @@
 							</span> -->
 						</div>
 					</div>
-					</a>
 					<% }); %>
 				</div>
 				<!-- <div id = "body-right-div">
@@ -79,5 +87,6 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src = "/public/js/animations.js"></script>
+	<script type="text/javascript" src = "/public/js/url_object.js"></script>
 </body>
 </html>

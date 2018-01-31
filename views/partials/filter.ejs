@@ -1,5 +1,5 @@
 <div id = "filters-div">
-			<form action="/" method="GET" name = "filter-form">
+				<span id = "properties_count"><%= Noproperties %> Properties</span>
 				<div id = "filters-heading"><span id = "filters-heading-span">Filters</span></div>
 				<div id = "buy-rent-filter">
 					<div class = "filters-element-heading">TYPE</div>
@@ -14,16 +14,16 @@
 					<div class = "filters-element-heading">BEDROOM</div>
 					<div class = "filters-element-body">
 						<div class = "filters-checkbox-div">
-							<input type = "checkbox" class = "checkbox-box" name = "1BHK"><span class = "checkbox-text">1 BHK</span>
+							<a href = "" class = "redirect_link"><input type = "checkbox" class = "checkbox-box" name = "1BHK"></a><span class = "checkbox-text">1 BHK</span>
 						</div>
 						<div class = "filters-checkbox-div">
-							<input type = "checkbox" class = "checkbox-box" name = "2BHK"><span class = "checkbox-text">2 BHK</span>
+							<a href = "" class = "redirect_link"><input type = "checkbox" class = "checkbox-box" name = "2BHK"></a><span class = "checkbox-text">2 BHK</span>
 						</div>
 						<div class = "filters-checkbox-div">
-							<input type = "checkbox" class = "checkbox-box" name = "3BHK"><span class = "checkbox-text">3 BHK</span>
+							<a href = "" class = "redirect_link"><input type = "checkbox" class = "checkbox-box" name = "3BHK"></a><span class = "checkbox-text">3 BHK</span>
 						</div>
 						<div class = "filters-checkbox-div">
-							<input type = "checkbox" class = "checkbox-box" name = "4BHK"><span class = "checkbox-text">4 BHK</span>
+							<a href = "" class = "redirect_link"><input type = "checkbox" class = "checkbox-box" name = "4BHK"></a><span class = "checkbox-text">4 BHK</span>
 						</div>
 					</div>
 				</div>
@@ -42,11 +42,5 @@
 						<input type= "button" name ="listingSellerCompanyScorerating" class = "sort-button" value = "Rating">
 					</div>
 				</div>
-				<div id = "submit-button-div">
-					<input type = "hidden" name = "form" value = "filterForm">
-					<input type = "hidden" name = "link" class = "url-input" value = "filterForm">
-					<input type = "hidden" name = "sortBy" id = "sortParameter" value = "">
-					<input type="submit"  value = "GO!" id = "submit-button">
-				</div>
-			</form>
+				
 		</div>

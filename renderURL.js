@@ -54,11 +54,14 @@ function renderURL(link,res){
 	  				obj.resaleURL = "http://www.makaan.com/" + api_output.data[i].facetedResponse.items[j].listing.resaleURL;
 	  				obj.recencyScore = api_output.data[i].facetedResponse.items[j].listing.recencyScore;
 	  				obj.ratingString =  "background-image:linear-gradient(left, red, red " +(obj.recencyScore*10).toFixed(0).toString()+ "%,transparent " + (obj.recencyScore*10).toFixed(0).toString() + "%, transparent 100%);background-image: -webkit-linear-gradient(left, red, red " + (obj.recencyScore*10).toFixed(0).toString() + "%, transparent " + (obj.recencyScore*10).toFixed(0).toString() + "%, transparent 100%);" 
+					obj.contactNumber = api_output.data[i].facetedResponse.items[j].listing.companySeller.user.contactNumbers[0].contactNumber;
+					obj.rating = (api_output.data[i].facetedResponse.items[j].listing.companySeller.company.score/2).toFixed(1); 
+					obj.NoRatings = api_output.data[i].facetedResponse.items[j].listing.sellerCallRatingCount;
 					// console.log(obj.ratingString);
 	  				output.push(obj);
 					}
 				}
-				res.render("index.ejs",{arr: output, priceCorrector: priceCorrector,cities:city});
+				res.render("index.ejs",{arr: output, priceCorrector: priceCorrector,cities:city,Noproperties:api_output.data[0].totalCount});
 				res.end();
 			}
 			catch(err){

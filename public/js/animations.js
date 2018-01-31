@@ -3,11 +3,15 @@
 // });
 // 'use strict';
 $(document).ready(function(){
+	$(".checkbox-box").click(function(){
+	    	$("#search-bar").val($(this).text());
+	    	$(".suggestion").each(function(){
+	        	$(this).css("display","none"); 
+	        });
+	});
     $("#search-bar").keypress(function(e){
     	var s = String.fromCharCode(e.which);
         var str = $(this).val() + s;
-        // alert($(".suggestion").first().text());
-        // alert(str);
         $(".suggestion").each(function(){
         	if($(this).text().toLowerCase().lastIndexOf(str.toLowerCase(), 0) === 0){
         		$(this).css("display","block");
@@ -112,4 +116,8 @@ $(document).ready(function(){
 	    $(this).css("background-color", "black");
 	    // $(this).css("color", "white");
 	});
+	$(".contact-now-button").click(function(){
+		$(this).children(".contact-now-span").css("display","none");
+		$(this).children(".seller-contact-number").css("display","block");
+	})
 });
